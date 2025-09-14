@@ -25,11 +25,16 @@ public class Figure
 			_square = radius * radius; // если не круг - то квадрат
 	}
 
+	/// <summary>
+	/// Конструктор для круга
+	/// </summary>
+	/// <param name="radius"></param>
+	/// <param name="isCircle"></param>
 	public Figure(double basis, double height, bool isTriangle)
 	{
 		if (isTriangle)
 			_square = 0.5 * basis * height;
 		else
-			_square = basis * height;
+			_square = basis * height; // если не треугольник - то квадрат
 	}
 }

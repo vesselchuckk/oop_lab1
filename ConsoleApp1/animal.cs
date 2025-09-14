@@ -15,6 +15,11 @@ public class Animal
 		set { weight = value; }
 	}
 
+	public int Age
+	{
+		get { return age; }
+	}
+
 	public AnimalType Type
 	{
 		get { return type; }

@@ -25,6 +25,16 @@ public class Animal
 		get { return type; }
 	}
 
+	public Animal() {
+		name = "Unknown";
+		age = 0;
+		limbCount = 0;
+		type = AnimalType.Herbivore;
+		habitat = AnimalHabitat.Forest;
+		continent = Continent.Africa;
+		weight = 0;
+		hasTail = false;
+	}
 
 	public Animal(string name, int age, string species, int limbCount, AnimalType type, AnimalHabitat habitat, Continent continent, int weight, bool hasTail)
 	{
@@ -40,6 +50,61 @@ public class Animal
 	}
 	
 	// Methods
+		public bool ExistingTail()
+	{
+		return hasTail;
+	}
+
+	public static bool operator !=(Animal a, Animal b)
+	{
+		return !(a == b);
+	}
+
+	public static bool operator ==(Animal a, Animal b)
+	{
+		return a.name == b.name &&
+						a.age == b.age &&
+						a.limbCount == b.limbCount &&
+						a.type == b.type &&
+						a.habitat == b.habitat &&
+						a.continent == b.continent &&
+						a.weight == b.weight;
+	}
+
+	public string GetSound(AnimalType type)
+	{
+		return type switch
+		{
+			AnimalType.Herbivore => "Bleat",
+			AnimalType.Omnivore => "Growl",
+			AnimalType.Carnivore => "Roar",
+			_ => "Unknown sound"
+		};
+	}
+
+	public static string Movement(AnimalHabitat habitat)
+	{
+		return habitat switch
+		{
+			AnimalHabitat.Forest => "Walk",
+			AnimalHabitat.Desert => "Crawl",
+			AnimalHabitat.Aquatic => "Swim",
+			AnimalHabitat.Mountain => "Climb",
+			AnimalHabitat.Air => "Fly",
+			_ => "Unknown movement"
+		};
+	}
+
+	public static string CanFly(AnimalHabitat habitat)
+	{
+		return habitat == AnimalHabitat.Air ? "Can fly" : "Cannot fly";
+	}
+
+	public static string CanSwim(AnimalHabitat habitat)
+	{
+		return habitat == AnimalHabitat.Aquatic ? "Can swim" : "Cannot swim";
+	}
+
 	public virtual void MakeSound()
 	{
 		Console.WriteLine($"{name} makes a sound");

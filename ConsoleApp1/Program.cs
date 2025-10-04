@@ -31,5 +31,8 @@ class Program
 
 		lion.GetSound(lion.Type);
 		crocodile.ExistingTail();
+
+		crocodile.DisplayInfo();
+		lion.DisplayInfo();
 	}
 }

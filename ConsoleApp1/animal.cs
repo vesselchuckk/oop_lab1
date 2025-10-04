@@ -105,10 +105,7 @@ public class Animal
 		return habitat == AnimalHabitat.Aquatic ? "Can swim" : "Cannot swim";
 	}
 
-	public virtual void MakeSound()
-	{
-		Console.WriteLine($"{name} makes a sound");
-	}
+
 
 	public void DisplayInfo()
 	{

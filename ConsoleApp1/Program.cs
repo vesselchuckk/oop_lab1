@@ -29,6 +29,9 @@ class Program
 			true
 		);
 
+		Figure square = new Figure(4); // квадрат со стороной 4
+		Figure circle = new Figure(3, true); // круг с радиусом
+
 		lion.GetSound(lion.Type);
 		crocodile.ExistingTail();
 

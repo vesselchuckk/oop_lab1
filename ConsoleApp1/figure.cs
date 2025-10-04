@@ -26,10 +26,11 @@ public class Figure
 	}
 
 	/// <summary>
-	/// Конструктор для круга
+	/// Конструктор для треугольника
 	/// </summary>
-	/// <param name="radius"></param>
-	/// <param name="isCircle"></param>
+	/// <param name="basis"></param>
+	/// <param name="height"></param>
+	/// <param name="isTriangle"></param>
 	public Figure(double basis, double height, bool isTriangle)
 	{
 		if (isTriangle)
